@@ -15,10 +15,10 @@
     "url": "https://github.com/Mavricus/flex-platform"
   },
   "scripts": {
-    "build": "pnpm -- turbo run build",
+    "build": "turbo run build",
     "precommit": "lint-staged",
-    "test": "pnpm -- turbo run test",
-    "lint": "pnpm -- turbo run lint",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix"
   },
   "devDependencies": {

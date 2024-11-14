@@ -7,11 +7,11 @@
     "lib": [
       "ESNext"
     ],
+    "moduleResolution": "NodeNext",
     "isolatedModules": true,
     "noImplicitAny": true,
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
-    "moduleResolution": "NodeNext",
     "composite": false,
     "declaration": true,
     "declarationMap": true,

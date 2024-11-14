@@ -81,6 +81,10 @@ importers:
   package/eslint-config: {}
 
   package/kvs-core:
+    dependencies:
+      '@flex/base-error':
+        specifier: workspace:^
+        version: link:../base-error
     devDependencies:
       '@flex/eslint-config':
         specifier: workspace:*
@@ -91,6 +95,9 @@ importers:
 
   package/kvs-in-memory:
     dependencies:
+      '@flex/base-error':
+        specifier: workspace:^
+        version: link:../base-error
       '@flex/kvs-core':
         specifier: workspace:*
         version: link:../kvs-core

@@ -15,7 +15,7 @@
     "url": "https://github.com/Mavricus/flex-platform"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "precommit": "lint-staged",
     "check-types": "tsc --noEmit"
@@ -23,5 +23,8 @@
   "devDependencies": {
     "@flex/eslint-config": "workspace:*",
     "@flex/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "@flex/base-error": "workspace:^"
   }
 }

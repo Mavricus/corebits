@@ -15,7 +15,7 @@
     "url": "https://github.com/Mavricus/flex-platform"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "precommit": "lint-staged",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",

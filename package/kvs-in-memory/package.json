@@ -15,13 +15,14 @@
     "url": "https://github.com/Mavricus/flex-platform"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "precommit": "lint-staged",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@flex/base-error": "workspace:^",
     "@flex/kvs-core": "workspace:*"
   },
   "devDependencies": {
