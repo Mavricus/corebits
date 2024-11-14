@@ -1,6 +1,6 @@
 {
   "name": "@flex/kvs-in-memory",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Flex Platform Key-Value Storage Core package",
   "author": "Mavricus",
   "license": "MIT",
