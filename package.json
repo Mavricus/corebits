@@ -1,0 +1,46 @@
+{
+  "name": "flex-platform",
+  "version": "0.0.0",
+  "description": "FLex platform monorepo",
+  "author": "Mavricus",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@9.7.1",
+  "engines": {
+    "pnpm": ">=9.0.0",
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mavricus/flex-platform"
+  },
+  "scripts": {
+    "build": "pnpm -- turbo run build",
+    "precommit": "lint-staged",
+    "test": "pnpm -- turbo run test",
+    "lint": "pnpm -- turbo run lint",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.0",
+    "@types/sinon": "^17.0.3",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-check-file": "^2.8.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^15.12.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "sinon": "^19.0.2",
+    "ts-jest": "^29.2.5",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0"
+  }
+}

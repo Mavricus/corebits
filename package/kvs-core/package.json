@@ -1,0 +1,27 @@
+{
+  "name": "@flex/kvs-core",
+  "version": "0.0.1",
+  "description": "Flex Clatform Key-Value Storage Core package",
+  "author": "Mavricus",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "pnpm": ">=9.0.0",
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mavricus/flex-platform"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "precommit": "lint-staged",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@flex/eslint-config": "workspace:*",
+    "@flex/typescript-config": "workspace:*"
+  }
+}
