@@ -16,9 +16,9 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "precommit": "lint-staged",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "lint:staged": "lint-staged",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {

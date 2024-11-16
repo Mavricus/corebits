@@ -14,10 +14,16 @@
         "build"
       ]
     },
-    "test": {
+    "lint:staged": {
       "dependsOn": [
-        "lint"
+        "build"
       ]
-    }
+    },
+    "lint:fix": {
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "test": {}
   }
 }
