@@ -3,7 +3,7 @@
 /.pnpm-store
 schema.gql
 
-/.changeset/thin-beans-boil.md
+/.changeset/*.md
 .turbo
 /package/*/dist
 /package/*/node_modules

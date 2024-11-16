@@ -1,6 +1,6 @@
 {
   "name": "@flex/middleware",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Flex Platform Middleware package",
   "author": "Mavricus",
   "license": "MIT",
@@ -16,8 +16,9 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "precommit": "lint-staged",
     "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "lint:staged": "lint-staged",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {

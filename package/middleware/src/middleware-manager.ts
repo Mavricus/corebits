@@ -1,28 +1,33 @@
-export interface IMiddleware<T extends (...args: Array<unknown>) => unknown> {
-  (next: T, ...context: Parameters<T>): ReturnType<T>;
+export interface IMiddleware<T extends (...args: P) => R, P extends Array<unknown> = Parameters<T>, R = ReturnType<T>> {
+  (next: T, ...data: Parameters<T>): ReturnType<T>;
 }
 
-export interface IMiddlewareManager<T extends (...args: Array<any>) => any> {
-  add(middleware: IMiddleware<T>): this;
+export interface IMiddlewareManager<
+  T extends (...args: P) => R,
+  P extends Array<unknown> = Parameters<T>,
+  R = ReturnType<T>,
+> {
+  add(middleware: IMiddleware<T, P, R>): this;
 
-  execute(...args: Parameters<T>): ReturnType<T>;
+  execute(...data: P): R;
 }
 
-export class MiddlewareManager<const T extends (...args: Array<unknown>) => unknown> implements IMiddlewareManager<T> {
-  private readonly middlewares: Array<IMiddleware<T>> = [];
+export class MiddlewareManager<T extends (...args: P) => R, P extends Array<unknown> = Parameters<T>, R = ReturnType<T>>
+  implements IMiddlewareManager<T, P, R>
+{
+  private readonly middlewares: Array<IMiddleware<T, P, R>> = [];
 
-  constructor(private readonly method: T) {}
+  constructor(private readonly action: T) {}
 
-  public add(middleware: IMiddleware<T>): this {
+  add(middleware: IMiddleware<T, P, R>): this {
     this.middlewares.push(middleware);
-
     return this;
   }
 
-  public execute(...args: Parameters<T>): ReturnType<T> {
+  execute(...data: Parameters<T>): ReturnType<T> {
     return this.middlewares.reduceRight(
-      (next, middleware) => ((...context: Parameters<T>) => middleware(next, ...context)) as T,
-      this.method,
-    )(...args) as ReturnType<T>;
+      (next: T, middleware: IMiddleware<T, P, R>) => ((...scope: Parameters<T>) => middleware(next, ...scope)) as T,
+      this.action,
+    )(...data) as ReturnType<T>;
   }
 }
