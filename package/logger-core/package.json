@@ -1,0 +1,30 @@
+{
+  "name": "@flex/logger-core",
+  "version": "1.0.0",
+  "description": "Flex Platform Logger Core package",
+  "author": "Mavricus",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "pnpm": ">=9.0.0",
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mavricus/flex-platform"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "lint:staged": "lint-staged",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@flex/eslint-config": "workspace:*",
+    "@flex/middleware": "workspace:*",
+    "@flex/base-error": "workspace:*",
+    "@flex/typescript-config": "workspace:*"
+  }
+}
