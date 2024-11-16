@@ -6,6 +6,7 @@ schema.gql
 /.changeset/thin-beans-boil.md
 .turbo
 /package/*/dist
+/package/*/node_modules
 
 .env
 
