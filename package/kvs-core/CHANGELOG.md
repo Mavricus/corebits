@@ -1,5 +1,11 @@
 # @flex/kvs-core
 
+## 1.1.0
+
+### Minor Changes
+
+- Extends KVS interface
+
 ## 1.0.0
 
 ### Major Changes
@@ -9,4 +15,4 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @flex/base-error@1.0.0
+    - @flex/base-error@1.0.0

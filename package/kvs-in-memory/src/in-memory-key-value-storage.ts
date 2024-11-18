@@ -1,33 +1,108 @@
-import {
-  IKeyValueStorage,
-  KvsDeleteValueError,
-  KvsGetValueError,
-  KvsSetValueError,
-  KvsUpdateValueError,
-} from '@flex/kvs-core';
+import { IKeyValueStorage, KvsSetValueError, KvsUpdateValueError } from '@flex/kvs-core';
 
-export class InMemoryKeyValueStorage implements IKeyValueStorage {
-  get(key: string): Promise<string | null> {
-    throw new KvsGetValueError('Method get not implemented.', key);
+interface IStorageItem<T> {
+  value: T;
+  timer: NodeJS.Timeout | null;
+}
+
+export class InMemoryKeyValueStorage<T> implements IKeyValueStorage<T> {
+  private readonly storage = new Map<string, IStorageItem<T>>();
+
+  get(key: string): Promise<T | null> {
+    const value = this.storage.get(key);
+
+    if (value == null) {
+      return Promise.resolve(null);
+    }
+
+    return Promise.resolve(value.value);
   }
 
-  set(key: string, value: string, ttl?: number): Promise<void> {
-    throw new KvsSetValueError('Method set not implemented.', key, ttl);
+  set(key: string, value: T, ttlSec?: number): Promise<void> {
+    if (this.storage.has(key)) {
+      return Promise.reject(new KvsSetValueError('The key is already defined', key, ttlSec));
+    }
+
+    this.storage.set(key, { value, timer: this.setTtl(key, ttlSec) });
+
+    return Promise.resolve();
   }
 
   delete(key: string): Promise<void> {
-    throw new KvsDeleteValueError('Method delete not implemented.', key);
+    const item = this.storage.get(key);
+
+    if (item == null) {
+      return Promise.resolve();
+    }
+
+    this.cleanTimer(item);
+
+    this.storage.delete(key);
+
+    return Promise.resolve();
   }
 
-  update(key: string, value: string, ttl?: number): Promise<void> {
-    throw new KvsUpdateValueError('Method update not implemented.', key, ttl);
+  update(key: string, value: T, ttlSec?: number): Promise<void> {
+    const item = this.storage.get(key);
+
+    if (item == null) {
+      return Promise.reject(new KvsUpdateValueError('Key is not defined', key, ttlSec));
+    }
+
+    this.storage.set(key, { value, timer: this.setTtl(key, ttlSec) });
+
+    return Promise.resolve();
   }
 
-  setValue(key: string /*, value: string*/): Promise<void> {
-    throw new KvsUpdateValueError('Method setValue not implemented.', key);
+  updateValue(key: string, value: T): Promise<void> {
+    const item = this.storage.get(key);
+
+    if (item == null) {
+      return Promise.reject(new KvsUpdateValueError('Key is not defined', key));
+    }
+
+    item.value = value;
+
+    return Promise.resolve();
   }
 
-  setTtl(key: string, ttl: number): Promise<void> {
-    throw new KvsUpdateValueError('Method setTtl not implemented.', key, ttl);
+  updateTtl(key: string, ttlSec?: number): Promise<void> {
+    const item = this.storage.get(key);
+
+    if (item == null) {
+      return Promise.reject(new KvsUpdateValueError('Key is not defined', key, ttlSec));
+    }
+
+    this.cleanTimer(item);
+
+    item.timer = this.setTtl(key, ttlSec);
+
+    return Promise.resolve();
+  }
+
+  setOrUpdate(key: string, value: T, ttlSec?: number): Promise<void> {
+    const item = this.storage.get(key);
+
+    if (item != null) {
+      this.cleanTimer(item);
+    }
+
+    this.storage.set(key, { value, timer: this.setTtl(key, ttlSec) });
+
+    return Promise.resolve();
+  }
+
+  private cleanTimer(item: IStorageItem<T>): void {
+    if (item.timer != null) {
+      clearTimeout(item.timer);
+    }
+  }
+
+  private setTtl(key: string, ttlSec?: number): NodeJS.Timeout | null {
+    if (ttlSec == null) {
+      return null;
+    }
+
+    return setTimeout(() => this.storage.delete(key), ttlSec * 1000);
   }
 }

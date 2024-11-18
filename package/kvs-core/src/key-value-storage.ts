@@ -1,13 +1,15 @@
-export interface IKeyValueStorage {
-  get(key: string): Promise<string | null>;
+export interface IKeyValueStorage<T> {
+  get(key: string): Promise<T | null>;
 
-  set(key: string, value: string, ttl?: number): Promise<void>;
+  set(key: string, value: T, ttlSec?: number): Promise<void>;
 
   delete(key: string): Promise<void>;
 
-  update(key: string, value: string, ttl?: number): Promise<void>;
+  update(key: string, value: T, ttlSec?: number): Promise<void>;
 
-  setValue(key: string, value: string): Promise<void>;
+  updateValue(key: string, value: T): Promise<void>;
 
-  setTtl(key: string, ttl: number): Promise<void>;
+  updateTtl(key: string, ttlSec?: number): Promise<void>;
+
+  setOrUpdate(key: string, value: T, ttlSec?: number): Promise<void>;
 }
