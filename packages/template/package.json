@@ -1,7 +1,7 @@
 {
-  "name": "@flex/base-error",
-  "version": "1.0.0",
-  "description": "Flex Platform Base Error package",
+  "name": "@flex/template",
+  "version": "0.0.1",
+  "description": "Flex Platform Template package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",
@@ -19,6 +19,7 @@
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint:staged": "lint-staged",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
