@@ -1,1 +1,0 @@
-{"version":3,"file":"console-log-message-writer.d.ts","sourceRoot":"","sources":["../../../src/writer/console-writer/console-log-message-writer.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,iBAAiB,EAAE,QAAQ,EAAE,MAAM,iBAAiB,CAAC;AAE9D,qBAAa,uBAAwB,YAAW,iBAAiB;IAC/D,KAAK,CAAC,KAAK,EAAE,QAAQ,EAAE,OAAO,EAAE,MAAM,GAAG,IAAI;CAO9C"}

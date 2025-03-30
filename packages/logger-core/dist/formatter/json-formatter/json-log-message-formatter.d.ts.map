@@ -1,1 +1,0 @@
-{"version":3,"file":"json-log-message-formatter.d.ts","sourceRoot":"","sources":["../../../src/formatter/json-formatter/json-log-message-formatter.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,oBAAoB,EAAE,gBAAgB,EAAE,MAAM,iBAAiB,CAAC;AAEzE,qBAAa,uBAAwB,YAAW,oBAAoB;IAClE,MAAM,CAAC,KAAK,EAAE,gBAAgB,GAAG,MAAM;CAGxC"}
