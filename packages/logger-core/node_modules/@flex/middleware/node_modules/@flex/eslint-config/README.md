@@ -1,0 +1,1 @@
+# @flex/eslint-config

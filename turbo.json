@@ -24,6 +24,10 @@
         "build"
       ]
     },
-    "test": {}
+    "test": {
+      "dependsOn": [
+        "lint"
+      ]
+    }
   }
 }

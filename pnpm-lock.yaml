@@ -23,6 +23,9 @@ importers:
       changeset:
         specifier: ^0.2.6
         version: 0.2.6
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       eslint:
         specifier: ^9.14.0
         version: 9.14.0
@@ -78,7 +81,7 @@ importers:
         specifier: ^8.14.0
         version: 8.14.0(eslint@9.14.0)(typescript@5.6.3)
 
-  package/base-error:
+  packages/base-error:
     devDependencies:
       '@flex/eslint-config':
         specifier: workspace:*
@@ -87,9 +90,9 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  package/eslint-config: {}
+  packages/eslint-config: {}
 
-  package/kvs-core:
+  packages/kvs-core:
     dependencies:
       '@flex/base-error':
         specifier: workspace:^
@@ -102,7 +105,7 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  package/kvs-in-memory:
+  packages/kvs-in-memory:
     dependencies:
       '@flex/base-error':
         specifier: workspace:^
@@ -118,7 +121,7 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  package/logger-core:
+  packages/logger-core:
     devDependencies:
       '@flex/base-error':
         specifier: workspace:*
@@ -133,7 +136,7 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  package/middleware:
+  packages/middleware:
     devDependencies:
       '@flex/eslint-config':
         specifier: workspace:*
@@ -142,7 +145,7 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  package/template:
+  packages/template:
     devDependencies:
       '@flex/eslint-config':
         specifier: workspace:*
@@ -151,7 +154,7 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  package/typescript-config: {}
+  packages/typescript-config: {}
 
 packages:
 
@@ -919,6 +922,11 @@ packages:
   create-jest@29.7.0:
     resolution: {integrity: sha512-Adz2bdH0Vq3F53KEMJOoftQFutWCukm6J24wbPWRO4k1kMY7gS7ds/uoJkNuV8wDCtWWnuwGcJwpWcih+zEW1Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+
+  cross-env@7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
     hasBin: true
 
   cross-spawn@5.1.0:
@@ -3650,6 +3658,10 @@ snapshots:
       - babel-plugin-macros
       - supports-color
       - ts-node
+
+  cross-env@7.0.3:
+    dependencies:
+      cross-spawn: 7.0.5
 
   cross-spawn@5.1.0:
     dependencies:

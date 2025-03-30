@@ -1,0 +1,1 @@
+{"version":3,"file":"kvs-get-value-error.d.ts","sourceRoot":"","sources":["../../src/error/kvs-get-value-error.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,iBAAiB,EAAE,MAAM,kBAAkB,CAAC;AAEhE,MAAM,WAAW,qBAAsB,SAAQ,iBAAiB;IAC9D,GAAG,EAAE,MAAM,CAAC;CACb;AAED,qBAAa,gBAAiB,SAAQ,SAAS,CAAC,qBAAqB,CAAC;gBACxD,OAAO,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,EAAE,aAAa,CAAC,EAAE,KAAK;CAGhE"}
