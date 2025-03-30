@@ -1,4 +1,4 @@
-# @flex/eslint-config
+# @flex-platform/eslint-config
 
 ## 1.0.0
 

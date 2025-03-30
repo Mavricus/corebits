@@ -1,1 +1,1 @@
-# @flex/middleware
+# @flex-platform/middleware

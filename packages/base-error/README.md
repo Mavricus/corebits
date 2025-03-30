@@ -1,1 +1,1 @@
-# @flex/base-error
+# @flex-platform/base-error

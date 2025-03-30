@@ -1,4 +1,4 @@
-# @flex/base-error
+# @flex-platform/base-error
 
 ## 1.0.0
 

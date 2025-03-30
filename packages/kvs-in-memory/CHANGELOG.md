@@ -1,4 +1,4 @@
-# @flex/kvs-in-memory
+# @flex-platform/kvs-in-memory
 
 ## 1.1.0
 
@@ -16,5 +16,5 @@
 ### Patch Changes
 
 - Updated dependencies
-    - @flex/base-error@1.0.0
-    - @flex/kvs-core@1.0.0
+    - @flex-platform/base-error@1.0.0
+    - @flex-platform/kvs-core@1.0.0

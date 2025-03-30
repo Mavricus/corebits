@@ -1,4 +1,4 @@
-# @flex/typescript-config
+# @flex-platform/typescript-config
 
 ## 1.0.0
 

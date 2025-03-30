@@ -1,4 +1,4 @@
-import { BaseError, IBaseErrorContext } from '@flex/base-error';
+import { BaseError, IBaseErrorContext } from '@flex-platform/base-error';
 
 export interface ISetValueErrorContext extends IBaseErrorContext {
   key: string;

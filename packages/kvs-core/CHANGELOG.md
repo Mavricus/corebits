@@ -1,4 +1,4 @@
-# @flex/kvs-core
+# @flex-platform/kvs-core
 
 ## 1.1.0
 
@@ -15,4 +15,4 @@
 ### Patch Changes
 
 - Updated dependencies
-    - @flex/base-error@1.0.0
+    - @flex-platform/base-error@1.0.0

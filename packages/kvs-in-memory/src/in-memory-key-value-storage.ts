@@ -1,4 +1,4 @@
-import { IKeyValueStorage, KvsSetValueError, KvsUpdateValueError } from '@flex/kvs-core';
+import { IKeyValueStorage, KvsSetValueError, KvsUpdateValueError } from '@flex-platform/kvs-core';
 
 interface IStorageItem<T> {
   value: T;
