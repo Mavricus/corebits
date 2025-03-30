@@ -1,1 +1,1 @@
-# @flex/kvs-core
+# @flex-platform/kvs-core

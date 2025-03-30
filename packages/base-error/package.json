@@ -1,5 +1,5 @@
 {
-  "name": "@flex/base-error",
+  "name": "@flex-platform/base-error",
   "version": "1.0.0",
   "description": "Flex Platform Base Error package",
   "author": "Mavricus",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform"
+    "url": "https://github.com/Mavricus/flex-platform/packages/base-error"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -23,7 +23,7 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@flex/eslint-config": "workspace:*",
-    "@flex/typescript-config": "workspace:*"
+    "@flex-platform/eslint-config": "workspace:*",
+    "@flex-platform/typescript-config": "workspace:*"
   }
 }

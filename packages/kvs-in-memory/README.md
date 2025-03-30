@@ -1,1 +1,1 @@
-# @flex/kvs-in-memory
+# @flex-platform/kvs-in-memory

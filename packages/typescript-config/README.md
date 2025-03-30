@@ -1,1 +1,1 @@
-# @flex/typescript-config
+# @flex-platform/typescript-config

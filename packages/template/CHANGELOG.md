@@ -1,4 +1,4 @@
-a# @flex/template
+a# @flex-platform/template
 
 ## 0.0.1
 

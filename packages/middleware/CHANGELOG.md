@@ -1,4 +1,4 @@
-# @flex/middleware
+# @flex-platform/middleware
 
 ## 1.1.0
 

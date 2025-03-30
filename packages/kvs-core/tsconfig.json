@@ -1,5 +1,5 @@
 {
-  "extends": "@flex/typescript-config/base.json",
+  "extends": "@flex-platform/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "dist"
   },

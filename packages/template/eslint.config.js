@@ -1,3 +1,3 @@
-import defaultConfig from '@flex/eslint-config/eslint.config.js';
+import defaultConfig from '@flex-platform/eslint-config/eslint.config.js';
 
 export default [...defaultConfig];

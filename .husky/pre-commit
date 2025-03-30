@@ -1,1 +1,2 @@
-pnpm precommit
+pnpm i
+pnpm test
