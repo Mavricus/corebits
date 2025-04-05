@@ -19,6 +19,8 @@
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
+    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --watch --config jest.config.js",
+    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --coverage --config jest.config.js",
     "lint:staged": "lint-staged",
     "check-types": "tsc --noEmit"
   },

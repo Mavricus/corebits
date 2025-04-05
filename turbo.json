@@ -28,6 +28,11 @@
       "dependsOn": [
         "lint"
       ]
+    },
+    "test:coverage": {
+      "dependsOn": [
+        "lint"
+      ]
     }
   }
 }

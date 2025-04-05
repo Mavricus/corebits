@@ -1,7 +1,7 @@
 {
-  "name": "@flex-platform/template",
-  "version": "0.0.1",
-  "description": "Flex Platform Template package",
+  "name": "@flex-platform/promise",
+  "version": "1.0.0",
+  "description": "Flex Platform Promise package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",
@@ -12,17 +12,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform/packages/template"
+    "url": "https://github.com/Mavricus/flex-platform"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint:staged": "lint-staged",
-    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
-    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --watch --config jest.config.js",
-    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --coverage --config jest.config.js",
     "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@flex-platform/base-error": "workspace:*"
   },
   "devDependencies": {
     "@flex-platform/eslint-config": "workspace:*",
