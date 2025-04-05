@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform"
+    "url": "https://github.com/Mavricus/flex-platform",
+    "directory": "packages/promise"
   },
   "scripts": {
     "build": "rimraf dist && tsc",

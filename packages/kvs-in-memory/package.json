@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform/packages/kvs-in-memory"
+    "url": "https://github.com/Mavricus/flex-platform",
+    "directory": "packages/kvs-in-memory"
   },
   "scripts": {
     "build": "rimraf dist && tsc",

@@ -1,5 +1,13 @@
 {
   "name": "@flex-platform/eslint-config",
   "version": "1.0.0",
-  "type": "module"
+  "type": "module",
+  "description": "Flex Platform ESLint configuration package",
+  "author": "Mavricus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mavricus/flex-platform",
+    "directory": "packages/eslint-config"
+  }
 }
