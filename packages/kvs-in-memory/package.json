@@ -1,33 +1,40 @@
 {
-  "name": "@flex-platform/kvs-in-memory",
+  "name": "@corebits/kvs-in-memory",
   "version": "1.1.0",
-  "description": "Flex Platform Key-Value Storage Core package",
+  "description": "Corebits Key-Value Storage Core package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
   "engines": {
     "pnpm": ">=9.0.0",
     "node": ">=22.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform",
+    "url": "https://github.com/Mavricus/corebits",
     "directory": "packages/kvs-in-memory"
   },
+  "files": [
+    "dist/src/**"
+  ],
+  "main": "dist/src/index.js",
   "scripts": {
+    "clean": "rimraf dist node_modules .turbo",
     "build": "rimraf dist && tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint:staged": "lint-staged",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
+    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --watch --config jest.config.js",
+    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --coverage --config jest.config.js",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@flex-platform/base-error": "workspace:^",
-    "@flex-platform/kvs-core": "workspace:*"
+    "@corebits/base-error": "workspace:^",
+    "@corebits/kvs-core": "workspace:*"
   },
   "devDependencies": {
-    "@flex-platform/eslint-config": "workspace:*",
-    "@flex-platform/typescript-config": "workspace:*"
+    "@corebits/eslint-config": "workspace:*",
+    "@corebits/typescript-config": "workspace:*"
   }
 }

@@ -33,7 +33,5 @@ describe('BaseError', () => {
     const originalError = new Error('Original error');
     const error = new TestError('Test', { test: 'test' }, originalError);
     expect(error.stack).toContain('Original error');
-  }); 
+  });
 });
-
-

@@ -1,13 +1,16 @@
 {
-  "name": "@flex-platform/typescript-config",
+  "name": "@corebits/typescript-config",
   "version": "1.0.0",
   "type": "module",
-  "description": "Flex Platform TypeScript configuration package",
+  "description": "Corebits TypeScript configuration package",
   "author": "Mavricus",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform",
+    "url": "https://github.com/Mavricus/corebits",
     "directory": "packages/typescript-config"
-  }
+  },
+  "files": [
+    "tsconfig.json"
+  ]
 }

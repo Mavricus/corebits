@@ -1,2 +1,3 @@
+pnpm clean
 pnpm i
 pnpm test

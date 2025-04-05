@@ -1,4 +1,4 @@
-# @flex-platform/base-error
+# @corebits/base-error
 
 ## 1.0.0
 

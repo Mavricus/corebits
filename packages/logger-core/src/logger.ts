@@ -1,5 +1,5 @@
-import { IMiddleware, MiddlewareManager } from '@flex-platform/middleware';
-import { BaseError, IBaseErrorContext } from '@flex-platform/base-error';
+import { IMiddleware, MiddlewareManager } from '@corebits/middleware';
+import { BaseError, IBaseErrorContext } from '@corebits/base-error';
 
 export enum LogLevel {
   CRITICAL = 60,

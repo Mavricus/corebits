@@ -227,7 +227,7 @@ export default [
     },
   },
   {
-    files: ['**/*.spec.ts', '**/*.e2e-spec.ts'],
+    files: ['**/*.test.ts', '**/*.e2e-test.ts'],
     rules: {
       '@import/no-extraneous-dependencies': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
@@ -241,7 +241,7 @@ export default [
     },
   },
   {
-    files: ['**/*-mock.ts'],
+    files: ['**/*.mock.ts'],
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',

@@ -83,10 +83,10 @@ importers:
 
   packages/base-error:
     devDependencies:
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -94,76 +94,76 @@ importers:
 
   packages/kvs-core:
     dependencies:
-      '@flex-platform/base-error':
+      '@corebits/base-error':
         specifier: workspace:^
         version: link:../base-error
     devDependencies:
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/kvs-in-memory:
     dependencies:
-      '@flex-platform/base-error':
+      '@corebits/base-error':
         specifier: workspace:^
         version: link:../base-error
-      '@flex-platform/kvs-core':
+      '@corebits/kvs-core':
         specifier: workspace:*
         version: link:../kvs-core
     devDependencies:
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/logger-core:
     devDependencies:
-      '@flex-platform/base-error':
+      '@corebits/base-error':
         specifier: workspace:*
         version: link:../base-error
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/middleware':
+      '@corebits/middleware':
         specifier: workspace:*
         version: link:../middleware
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/middleware:
     devDependencies:
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/promise:
     dependencies:
-      '@flex-platform/base-error':
+      '@corebits/base-error':
         specifier: workspace:*
         version: link:../base-error
     devDependencies:
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/template:
     devDependencies:
-      '@flex-platform/eslint-config':
+      '@corebits/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@flex-platform/typescript-config':
+      '@corebits/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
