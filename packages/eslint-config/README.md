@@ -1,1 +1,1 @@
-# @flex-platform/eslint-config
+# @corebits/eslint-config

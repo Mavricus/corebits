@@ -1,7 +1,7 @@
 {
-  "name": "@flex-platform/base-error",
-  "version": "1.0.0",
-  "description": "Flex Platform Base Error package",
+  "name": "@corebits/base-error",
+  "version": "1.0.2",
+  "description": "Corebits Base Error package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",
@@ -12,21 +12,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform",
+    "url": "https://github.com/Mavricus/corebits",
     "directory": "packages/base-error"
   },
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
+    "clean": "rimraf dist node_modules .turbo",
     "build": "rimraf dist && tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "lint:staged": "lint-staged",
     "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
     "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --watch --config jest.config.js",
     "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --coverage --config jest.config.js",
-    "lint:staged": "lint-staged",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@flex-platform/eslint-config": "workspace:*",
-    "@flex-platform/typescript-config": "workspace:*"
+    "@corebits/eslint-config": "workspace:*",
+    "@corebits/typescript-config": "workspace:*"
   }
 }

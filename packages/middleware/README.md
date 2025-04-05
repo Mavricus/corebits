@@ -1,1 +1,1 @@
-# @flex-platform/middleware
+# @corebits/middleware

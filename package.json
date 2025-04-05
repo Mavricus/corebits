@@ -1,7 +1,7 @@
 {
-  "name": "flex-platform",
+  "name": "corebits",
   "version": "0.0.0",
-  "description": "FLex platform monorepo",
+  "description": "Сorebits monorepo",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",
@@ -12,9 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform"
+    "url": "https://github.com/Mavricus/corebits"
   },
   "scripts": {
+    "clean": "turbo run clean",
     "build": "turbo run build",
     "check-types": "turbo run lint:fix",
     "test": "turbo run test",

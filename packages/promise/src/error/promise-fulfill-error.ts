@@ -1,4 +1,4 @@
-import { BaseError, IBaseErrorContext } from '@flex-platform/base-error';
+import { BaseError, IBaseErrorContext } from '@corebits/base-error';
 import { DelayedPromiseState } from '../delayed-promise/delayed-promise.js';
 
 export interface IPromiseFulfillErrorContext extends IBaseErrorContext {

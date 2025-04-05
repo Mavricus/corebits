@@ -33,6 +33,7 @@
       "dependsOn": [
         "lint"
       ]
-    }
+    },
+    "clean": { }
   }
 }

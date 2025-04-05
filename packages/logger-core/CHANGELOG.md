@@ -1,4 +1,4 @@
-# @flex-platform/logger-core
+# @corebits/logger-core
 
 ## 1.0.0
 

@@ -1,32 +1,39 @@
 {
-  "name": "@flex-platform/kvs-core",
+  "name": "@corebits/kvs-core",
   "version": "1.1.0",
   "description": "Flex Clatform Key-Value Storage Core package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
   "engines": {
     "pnpm": ">=9.0.0",
     "node": ">=22.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform",
+    "url": "https://github.com/Mavricus/corebits",
     "directory": "packages/kvs-core"
   },
+  "files": [
+    "dist/src/**"
+  ],
+  "main": "dist/src/index.js",
   "scripts": {
+    "clean": "rimraf dist node_modules .turbo",
     "build": "rimraf dist && tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
-    "precommit": "lint-staged",
+    "lint:staged": "lint-staged",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
+    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --watch --config jest.config.js",
+    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --coverage --config jest.config.js",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@flex-platform/eslint-config": "workspace:*",
-    "@flex-platform/typescript-config": "workspace:*"
+    "@corebits/eslint-config": "workspace:*",
+    "@corebits/typescript-config": "workspace:*"
   },
   "dependencies": {
-    "@flex-platform/base-error": "workspace:^"
+    "@corebits/base-error": "workspace:^"
   }
 }

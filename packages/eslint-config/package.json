@@ -1,13 +1,16 @@
 {
-  "name": "@flex-platform/eslint-config",
+  "name": "@corebits/eslint-config",
   "version": "1.0.0",
   "type": "module",
-  "description": "Flex Platform ESLint configuration package",
+  "description": "Corebits ESLint configuration package",
   "author": "Mavricus",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mavricus/flex-platform",
+    "url": "https://github.com/Mavricus/corebits",
     "directory": "packages/eslint-config"
-  }
+  },
+  "files": [
+    ".eslintrc.js"
+  ]
 }

@@ -1,1 +1,1 @@
-# @flex-platform/base-error
+# @corebits/base-error

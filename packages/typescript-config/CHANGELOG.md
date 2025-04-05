@@ -1,4 +1,4 @@
-# @flex-platform/typescript-config
+# @corebits/typescript-config
 
 ## 1.0.0
 

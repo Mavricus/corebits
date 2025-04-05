@@ -1,3 +1,3 @@
 export * from './in-memory-key-value-storage.js';
 
-export * from '@flex-platform/kvs-core';
+export * from '@corebits/kvs-core';

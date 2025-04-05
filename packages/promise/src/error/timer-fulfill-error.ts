@@ -1,4 +1,4 @@
-import { BaseError, IBaseErrorContext } from '@flex-platform/base-error';
+import { BaseError, IBaseErrorContext } from '@corebits/base-error';
 import { TimerState } from '../interruptible-timer/interruptible-timer-promise.js';
 
 export interface ITimerFulfillErrorFulfillErrorContext extends IBaseErrorContext {

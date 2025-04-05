@@ -1,1 +1,1 @@
-# @flex-platform/kvs-in-memory
+# @corebits/kvs-in-memory

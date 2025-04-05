@@ -1,1 +1,1 @@
-# @flex-platform/logger-core
+# @corebits/logger-core

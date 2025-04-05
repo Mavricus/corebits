@@ -1,4 +1,4 @@
-# @flex-platform/middleware
+# @corebits/middleware
 
 ## 1.1.0
 

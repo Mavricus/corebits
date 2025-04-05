@@ -1,1 +1,1 @@
-# @flex-platform/typescript-config
+# @corebits/typescript-config
