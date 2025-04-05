@@ -1,7 +1,7 @@
 {
   "name": "@corebits/template",
   "version": "0.0.1",
-  "description": "Corebits Template package",
+  "description": "CoreBits Template package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",

@@ -1,7 +1,7 @@
 {
   "name": "@corebits/kvs-in-memory",
   "version": "1.1.0",
-  "description": "Corebits Key-Value Storage Core package",
+  "description": "CoreBits Key-Value Storage Core package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",

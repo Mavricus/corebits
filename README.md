@@ -1,8 +1,8 @@
-# Corebits - Modular Node.js Toolkit
+# CoreBits - Modular Node.js Toolkit
 
-**Corebits** is your plug-and-play foundation for building reliable Node.js backends — fast.
+**CoreBits** is your plug-and-play foundation for building reliable Node.js backends — fast.
 
-Say goodbye to rigid frameworks and fragile glue code. Corebits delivers a powerful set of modular, production-ready
+Say goodbye to rigid frameworks and fragile glue code. CoreBits delivers a powerful set of modular, production-ready
 tools — from loggers and object validators to interchangeable key-value stores and messaging adapters — all designed to
 work seamlessly together.
 
@@ -10,15 +10,15 @@ work seamlessly together.
 
 ## 🚀 Fast and Flexible Backend Toolkit
 
-Corebits offers a collection of production-ready tools that integrate easily into your projects. Whether you're building
-a new system or migrating from one technology to another, you can rely on Corebits to keep things flexible and
+CoreBits offers a collection of production-ready tools that integrate easily into your projects. Whether you're building
+a new system or migrating from one technology to another, you can rely on CoreBits to keep things flexible and
 maintainable.
 
 ---
 
 ## ⚡ Built for Engineers Who Demand Flexibility
 
-Whether you're scaling fast or migrating from RabbitMQ to SQS, Corebits keeps your architecture flexible. Its consistent
+Whether you're scaling fast or migrating from RabbitMQ to SQS, CoreBits keeps your architecture flexible. Its consistent
 interfaces let you swap technologies with zero impact on your business logic. You stay in control — no hidden magic, no
 surprises.
 
@@ -27,7 +27,7 @@ surprises.
 ## 🔧 Simple, Yet Extensible
 
 Use only what you need, and nothing you don’t. Want to plug in your own logger? Easy. Need just a Redis adapter? Grab
-it. Corebits is not a framework — it's your personal toolkit for clean, composable systems that grow with you.
+it. CoreBits is not a framework — it's your personal toolkit for clean, composable systems that grow with you.
 
 ---
 
