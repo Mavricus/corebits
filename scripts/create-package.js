@@ -76,6 +76,7 @@ function updatePackageJson(packagePath, options, processSpinner) {
     packageJson.name = `@corebits/${packageName}`;
     packageJson.description = description ?? `CoreBits ${capitalizeWords(packageName)} package`;
     packageJson.repository.directory = `packages/${packageName}`;
+    packageJson.private = undefined;
 
     if (author) {
       packageJson.author = author;
