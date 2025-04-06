@@ -1,6 +1,7 @@
 {
   "name": "@corebits/typescript-config",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "description": "CoreBits TypeScript configuration package",
   "author": "Mavricus",
