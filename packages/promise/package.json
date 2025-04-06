@@ -24,9 +24,9 @@
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint:staged": "lint-staged",
-    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --config jest.config.js",
-    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --watch --config jest.config.js",
-    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --coverage --config jest.config.js",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --config jest.config.js",
+    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --watch --config jest.config.js",
+    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --coverage --config jest.config.js",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
