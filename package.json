@@ -15,7 +15,7 @@
     "url": "https://github.com/Mavricus/corebits"
   },
   "scripts": {
-    "clean": "turbo run clean",
+    "clean": "turbo run clean --force",
     "build": "turbo run build",
     "check-types": "turbo run lint:fix",
     "test": "turbo run test",
