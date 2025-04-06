@@ -45,6 +45,10 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: copy .npmrc
+        run: |
+          cp .npmrc.example .npmrc
+
       - name: Create Release Pull Request or Publish
         run: pnpm release
         env:
