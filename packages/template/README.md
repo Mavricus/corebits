@@ -1,4 +1,4 @@
-# Corebits {{Package Name}} package
+# CoreBits {{Package Name}} package
 
 ## Description
 

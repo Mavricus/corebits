@@ -74,7 +74,7 @@ function updatePackageJson(packagePath, options, processSpinner) {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
     packageJson.name = `@corebits/${packageName}`;
-    packageJson.description = description ?? `Corebits ${capitalizeWords(packageName)} package`;
+    packageJson.description = description ?? `CoreBits ${capitalizeWords(packageName)} package`;
     packageJson.repository.directory = `packages/${packageName}`;
 
     if (author) {

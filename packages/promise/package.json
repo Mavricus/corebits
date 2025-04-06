@@ -1,7 +1,7 @@
 {
   "name": "@corebits/promise",
   "version": "1.0.0",
-  "description": "Corebits Promise package",
+  "description": "CoreBits Promise package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",

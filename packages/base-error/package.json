@@ -1,7 +1,7 @@
 {
   "name": "@corebits/base-error",
   "version": "1.0.2",
-  "description": "Corebits Base Error package",
+  "description": "CoreBits Base Error package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",

@@ -1,7 +1,7 @@
 {
   "name": "@corebits/logger-core",
   "version": "1.0.0",
-  "description": "Corebits Logger Core package",
+  "description": "CoreBits Logger Core package",
   "author": "Mavricus",
   "license": "MIT",
   "type": "module",

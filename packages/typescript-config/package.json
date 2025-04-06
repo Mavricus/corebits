@@ -2,7 +2,7 @@
   "name": "@corebits/typescript-config",
   "version": "1.0.0",
   "type": "module",
-  "description": "Corebits TypeScript configuration package",
+  "description": "CoreBits TypeScript configuration package",
   "author": "Mavricus",
   "license": "MIT",
   "repository": {

@@ -2,7 +2,7 @@
   "name": "@corebits/eslint-config",
   "version": "1.0.0",
   "type": "module",
-  "description": "Corebits ESLint configuration package",
+  "description": "CoreBits ESLint configuration package",
   "author": "Mavricus",
   "license": "MIT",
   "repository": {
