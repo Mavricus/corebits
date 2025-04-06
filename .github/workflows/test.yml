@@ -38,4 +38,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Tests
-        run: pnpm test
+        run: turbo run test --concurrency=100% --affected
