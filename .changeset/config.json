@@ -8,8 +8,6 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@corebits/template",
-    "@corebits/typescript-config",
-    "@corebits/eslint-config"
+    "@corebits/template"
   ]
 }
