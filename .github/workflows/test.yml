@@ -38,4 +38,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Tests
-        run: pnpm test:affected
+        run: pnpm test

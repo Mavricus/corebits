@@ -18,7 +18,6 @@
     "clean": "turbo run clean --force",
     "build": "turbo run build --concurrency=100%",
     "test": "turbo run test --concurrency=100%",
-    "test:affected": "turbo run test --concurrency=100% --affected",
     "test:coverage": "turbo run test:coverage --concurrency=100%",
     "lint": "turbo run lint --concurrency=100%",
     "lint:fix": "turbo run lint:fix --concurrency=100%",
