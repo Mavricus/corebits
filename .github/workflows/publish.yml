@@ -39,10 +39,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: copy .npmrc
-        run: |
-          cp .npmrc.example .npmrc
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -58,4 +54,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push tags
-        run: git push --follow-tags
+        run: git push --tags
