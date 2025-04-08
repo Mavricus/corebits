@@ -17,4 +17,11 @@ export class StreamLogMessageWriter implements ILogMessageWriter {
     }
     this.log.write('\n');
   }
+
+  async close(): Promise<void> {
+    await Promise.all([
+      new Promise<void>((resolve) => this.log.end(resolve)),
+      new Promise<void>((resolve) => this.error.end(resolve)),
+    ]);
+  }
 }

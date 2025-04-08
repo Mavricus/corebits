@@ -2,13 +2,24 @@ import { IMiddleware, MiddlewareManager } from '@corebits/middleware';
 import { BaseError, IBaseErrorContext } from '@corebits/base-error';
 
 export enum LogLevel {
-  CRITICAL = 60,
-  ERROR = 50,
-  WARN = 40,
-  INFO = 30,
-  DEBUG = 20,
-  TRACE = 10,
+  CRITICAL = 'critical',
+  ERROR = 'error',
+  WARN = 'warning',
+  INFO = 'info',
+  DEBUG = 'debug',
+  TRACE = 'trace',
+  SILENT = 'silent',
 }
+
+export const logLevelPriority: Record<LogLevel, number> = {
+  [LogLevel.CRITICAL]: 60,
+  [LogLevel.ERROR]: 50,
+  [LogLevel.WARN]: 40,
+  [LogLevel.INFO]: 30,
+  [LogLevel.DEBUG]: 20,
+  [LogLevel.TRACE]: 10,
+  [LogLevel.SILENT]: Infinity,
+};
 
 export interface ILogDetails extends Record<string, unknown> {
   error?: Error;
@@ -22,6 +33,10 @@ export type ErrorLogLevel = LogLevel.CRITICAL | LogLevel.ERROR;
 export type InfoLogLevel = Exclude<LogLevel, ErrorLogLevel>;
 
 export interface ILogger {
+  get level(): LogLevel;
+
+  set level(level: LogLevel);
+
   critical(message: string, details: IErrorLogDetails): void;
 
   error(message: string, details: IErrorLogDetails): void;
@@ -38,7 +53,7 @@ export interface ILogger {
 
   log(level: InfoLogLevel, message: string, details: ILogDetails): void;
 
-  setLogLevel(level: LogLevel): void;
+  close(): Promise<void>;
 }
 
 export interface ILoggerConfig {
@@ -75,6 +90,8 @@ export interface ILogMessageFormatter {
 
 export interface ILogMessageWriter {
   write(level: LogLevel, message: string): void;
+
+  close(): Promise<void>;
 }
 
 export const NO_CONTEXT = 'no-context';
@@ -84,7 +101,7 @@ export interface IBuildScope {
 }
 
 export class Logger implements ILogger {
-  private level: LogLevel;
+  private logLevel: LogLevel;
   private readonly context: string;
   private readonly middlewares;
 
@@ -93,9 +110,17 @@ export class Logger implements ILogger {
     private readonly formatter: ILogMessageFormatter,
     private readonly writer: ILogMessageWriter,
   ) {
-    this.level = config.level ?? LogLevel.INFO;
+    this.logLevel = config.level ?? LogLevel.INFO;
     this.context = config.context ?? NO_CONTEXT;
-    this.middlewares = new MiddlewareManager<IBuildScope>((i) => i);
+    this.middlewares = new MiddlewareManager<IBuildScope>((scope: ILogMessageScope) => scope);
+  }
+
+  get level(): LogLevel {
+    return this.logLevel;
+  }
+
+  set level(level: LogLevel) {
+    this.logLevel = level;
   }
 
   critical(message: string, details: IErrorLogDetails): void {
@@ -123,7 +148,7 @@ export class Logger implements ILogger {
   }
 
   log(level: LogLevel, message: string, details: ILogDetails): void {
-    if (level <= this.level) {
+    if (logLevelPriority[level] < logLevelPriority[this.logLevel]) {
       return;
     }
 
@@ -132,8 +157,8 @@ export class Logger implements ILogger {
     this.writer.write(level, this.formatter.format(scope));
   }
 
-  setLogLevel(level: LogLevel): void {
-    this.level = level;
+  close(): Promise<void> {
+    return this.writer.close();
   }
 
   use(middleware: IMiddleware<IBuildScope>): this {

@@ -1,7 +1,7 @@
-import { ILogger, ILoggerConfig, ILogMessageFormatter, ILogMessageWriter, Logger } from '../logger.js';
+import { ILoggerConfig, ILogMessageFormatter, ILogMessageWriter, Logger } from '../logger.js';
 
 export interface ILoggerFactory {
-  create(config: ILoggerConfig): ILogger;
+  create(config: ILoggerConfig): Logger;
 }
 
 export class LoggerFactory implements ILoggerFactory {
@@ -10,7 +10,7 @@ export class LoggerFactory implements ILoggerFactory {
     private readonly writer: ILogMessageWriter,
   ) {}
 
-  create(config: ILoggerConfig): ILogger {
+  create(config: ILoggerConfig = {}): Logger {
     return new Logger(config, this.formater, this.writer);
   }
 }
