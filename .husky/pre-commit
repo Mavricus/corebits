@@ -1,4 +1,5 @@
 pnpm clean
 pnpm i
+pnpm build
 pnpm lint-staged
 pnpm test:prod

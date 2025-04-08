@@ -5,13 +5,12 @@ node_modules
 src
 test
 
-jest.config.prod.js
+jest.config.js
 jest.config.prod.js
 
-tsconfig.build.json
 tsconfig.json
-
-.eslintrc.js
+.lintstagedrc.json
+eslint.config.js
 .npmrc.example
 .nvmrc
 .prettierrc

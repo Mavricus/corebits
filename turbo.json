@@ -11,28 +11,14 @@
     },
     "lint": {},
     "lint:fix": {},
-    "test": {
-      "dependsOn": [
-        "^test"
-      ],
-      "outputs": [
-        "coverage/**"
-      ]
-    },
-    "test:prod": {
-      "dependsOn": [
-        "build"
-      ]
-    },
+    "test": {},
+    "test:prod": {},
     "test:coverage": {
       "outputs": [
         "coverage/**"
       ]
     },
     "clean": {
-      "dependsOn": [
-        "^clean"
-      ],
       "outputs": [
         "dist/**",
         "coverage/**",
