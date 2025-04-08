@@ -151,6 +151,22 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
+  packages/logger-pretty-formatter:
+    dependencies:
+      '@corebits/logger-core':
+        specifier: workspace:*
+        version: link:../logger-core
+      chalk:
+        specifier: ^5.4.1
+        version: 5.4.1
+    devDependencies:
+      '@corebits/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@corebits/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+
   packages/middleware:
     devDependencies:
       '@corebits/eslint-config':
