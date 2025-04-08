@@ -9,31 +9,22 @@
         "dist/**"
       ]
     },
-    "lint": {
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "lint:staged": {
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "lint:fix": {
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "test": {
-      "dependsOn": [
-        "lint"
-      ]
-    },
+    "lint": {},
+    "lint:fix": {},
+    "test": {},
+    "test:prod": {},
     "test:coverage": {
-      "dependsOn": [
-        "lint"
+      "outputs": [
+        "coverage/**"
       ]
     },
-    "clean": { }
+    "clean": {
+      "outputs": [
+        "dist/**",
+        "coverage/**",
+        ".turbo/**",
+        "node_modules/**"
+      ]
+    }
   }
 }

@@ -1,3 +1,5 @@
 pnpm clean
 pnpm i
-pnpm test
+pnpm build
+pnpm lint-staged
+pnpm test:prod

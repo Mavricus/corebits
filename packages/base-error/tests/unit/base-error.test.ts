@@ -1,4 +1,4 @@
-import { BaseError } from '../src/index.js';
+import { BaseError } from '../../src/index.js';
 
 class TestError extends BaseError<{ test: string }> {
   constructor(message: string, context: { test: string }, originalError?: Error) {
