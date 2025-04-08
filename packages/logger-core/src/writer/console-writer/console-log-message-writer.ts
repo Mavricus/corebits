@@ -9,4 +9,8 @@ export class ConsoleLogMessageWriter implements ILogMessageWriter {
 
     console.error(message);
   }
+
+  close(): Promise<void> {
+    return Promise.resolve();
+  }
 }
