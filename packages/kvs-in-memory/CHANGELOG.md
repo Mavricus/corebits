@@ -1,5 +1,13 @@
 # @corebits/kvs-in-memory
 
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies
+    - @corebits/base-error@1.1.0
+    - @corebits/kvs-core@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

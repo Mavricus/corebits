@@ -18,14 +18,21 @@ export interface IBaseErrorContext {
   [key: string]: IErrorContextField | IBaseErrorContext | Array<IErrorContextField | IBaseErrorContext>;
 }
 
+const BASE_ERROR_MARK = '4049db3a-aeec-4977-9c9e-f929e49b8d69';
+
 export abstract class BaseError<T extends IBaseErrorContext> extends Error {
   readonly context: DeepReadonly<T>;
+  private readonly mark: string = BASE_ERROR_MARK;
 
   protected constructor(message: string, context: DeepReadonly<T>, originalError?: Error) {
     super(message);
     this.context = context;
 
     this.buildStack(originalError);
+  }
+
+  static isCorebitsError(error: unknown): error is BaseError<IBaseErrorContext> {
+    return (error as BaseError<IBaseErrorContext>)?.mark === BASE_ERROR_MARK;
   }
 
   private getErrorStack(error: unknown): Array<string> {
