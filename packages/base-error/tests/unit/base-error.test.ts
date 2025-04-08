@@ -1,4 +1,4 @@
-import { BaseError } from '../src/index.js';
+import { BaseError } from '../../src/index.js';
 
 class TestError extends BaseError<{ test: string }> {
   constructor(message: string, context: { test: string }, originalError?: Error) {
@@ -33,5 +33,25 @@ describe('BaseError', () => {
     const originalError = new Error('Original error');
     const error = new TestError('Test', { test: 'test' }, originalError);
     expect(error.stack).toContain('Original error');
+  });
+
+  describe('isCorebitsError', () => {
+    it('should return true for BaseError instance', () => {
+      const error = new TestError('Test', { test: 'test' });
+      expect(BaseError.isCorebitsError(error)).toBe(true);
+    });
+
+    it('should return false for non-BaseError instance', () => {
+      const error = new Error('Test');
+      expect(BaseError.isCorebitsError(error)).toBe(false);
+    });
+
+    it('should return false for null', () => {
+      expect(BaseError.isCorebitsError(null)).toBe(false);
+    });
+
+    it('should return false for undefined', () => {
+      expect(BaseError.isCorebitsError(undefined)).toBe(false);
+    });
   });
 });

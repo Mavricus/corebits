@@ -5,7 +5,7 @@ node_modules
 src
 test
 
-jest.config.js
+jest.config.prod.js
 jest.config.prod.js
 
 tsconfig.build.json

@@ -1,10 +1,20 @@
 const config = {
-  moduleFileExtensions: ['js', 'json'],
+  moduleFileExtensions: ['js', 'json', 'ts'],
   verbose: true,
-  testRegex: 'dist/tests/.*\\.test\\.js$',
-  transform: {},
+  testRegex: 'tests/.*\\.test\\.ts$',
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+        diagnostics: {
+          warnOnly: true
+        }
+      }
+    ]
+  },
   testEnvironment: 'node',
-  roots: ['<rootDir>/dist/tests'],
+  roots: ['<rootDir>/tests'],
   coveragePathIgnorePatterns: [
     'node_modules',
     'test-config',
@@ -16,8 +26,15 @@ const config = {
     'src/database',
   ],
   coverageReporters: ['text', 'html'],
-  collectCoverageFrom: ['**/*.js'],
-  coverageDirectory: '../coverage',
+  collectCoverageFrom: ['src/**/*.ts'],
+  coverageDirectory: './coverage',
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1'
+  },
+  testEnvironmentOptions: {
+    NODE_OPTIONS: '--experimental-vm-modules'
+  }
 };
 
-export default config;
+export default config; 
