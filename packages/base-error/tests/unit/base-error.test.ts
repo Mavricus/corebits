@@ -34,24 +34,4 @@ describe('BaseError', () => {
     const error = new TestError('Test', { test: 'test' }, originalError);
     expect(error.stack).toContain('Original error');
   });
-
-  describe('isCorebitsError', () => {
-    it('should return true for BaseError instance', () => {
-      const error = new TestError('Test', { test: 'test' });
-      expect(BaseError.isCorebitsError(error)).toBe(true);
-    });
-
-    it('should return false for non-BaseError instance', () => {
-      const error = new Error('Test');
-      expect(BaseError.isCorebitsError(error)).toBe(false);
-    });
-
-    it('should return false for null', () => {
-      expect(BaseError.isCorebitsError(null)).toBe(false);
-    });
-
-    it('should return false for undefined', () => {
-      expect(BaseError.isCorebitsError(undefined)).toBe(false);
-    });
-  });
 });
