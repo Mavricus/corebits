@@ -237,6 +237,7 @@ export default [
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
       'check-file/filename-naming-convention': 'off',
+      'security/detect-non-literal-fs-filename': 'off',
       'no-magic-numbers': 'off',
     },
   },

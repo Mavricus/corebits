@@ -1,0 +1,42 @@
+{
+  "name": "@corebits/logger-sonic-boom",
+  "version": "1.0.0",
+  "description": "CoreBits Logger Sonic-Boom package",
+  "author": "Mavricus",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "pnpm": ">=9.0.0",
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mavricus/corebits",
+    "directory": "packages/logger-sonic-boom"
+  },
+  "files": [
+    "dist/src/**"
+  ],
+  "main": "dist/src/index.js",
+  "scripts": {
+    "clean": "rimraf dist node_modules .turbo coverage",
+    "build": "rimraf dist && tsc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --config jest.config.js",
+    "test:prod": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --config jest.config.prod.js",
+    "test:watch": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --watch --config jest.config.js",
+    "test:coverage": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors --coverage --config jest.config.js",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@corebits/base-error": "workspace:^",
+    "@corebits/logger-core": "workspace:^",
+    "on-exit-leak-free": "^2.1.2",
+    "sonic-boom": "^4.2.0"
+  },
+  "devDependencies": {
+    "@corebits/eslint-config": "workspace:*",
+    "@corebits/typescript-config": "workspace:*"
+  }
+}
