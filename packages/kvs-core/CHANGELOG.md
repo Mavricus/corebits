@@ -1,5 +1,12 @@
 # @corebits/kvs-core
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @corebits/base-error@1.2.0
+
 ## 1.1.1
 
 ### Patch Changes

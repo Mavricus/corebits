@@ -22,11 +22,13 @@ const BASE_ERROR_MARK = '4049db3a-aeec-4977-9c9e-f929e49b8d69';
 
 export abstract class BaseError<T extends IBaseErrorContext> extends Error {
   readonly context: DeepReadonly<T>;
+  readonly causedBy: Error | undefined;
   private readonly mark: string = BASE_ERROR_MARK;
 
   protected constructor(message: string, context: DeepReadonly<T>, originalError?: Error) {
     super(message);
     this.context = context;
+    this.causedBy = originalError;
 
     this.buildStack(originalError);
   }
@@ -48,11 +50,21 @@ export abstract class BaseError<T extends IBaseErrorContext> extends Error {
       return [error];
     }
 
-    if ((error as Error)?.name != null || (error as Error).message != null) {
-      return [[(error as Error).name, (error as Error).message].join(': ')];
+    if (typeof (error as Error)?.stack === 'string') {
+      return (error as Error)?.stack?.split('\n') ?? [];
     }
 
-    return [];
+    const result: Array<string> = [];
+
+    if (typeof (error as Error)?.name === 'string') {
+      result.push((error as Error).name);
+    }
+
+    if (typeof (error as Error)?.message === 'string') {
+      result.push((error as Error).message);
+    }
+
+    return result.length > 0 ? [result.join(': ')] : [];
   }
 
   private buildStack(originalError?: Error): void {
