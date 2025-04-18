@@ -256,6 +256,7 @@ export default [
     rules: {
       'check-file/filename-naming-convention': 'off',
       '@typescript-eslint/naming-convention': 'off',
+      '@typescript-eslint/no-empty-function': 'off',
     },
   },
 ];
