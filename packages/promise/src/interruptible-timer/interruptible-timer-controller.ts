@@ -2,15 +2,19 @@ import { TimerFulfillError } from '../error/timer-fulfill-error.js';
 import { IInterruptibleTimerPromise, InterruptibleTimerPromise } from './interruptible-timer-promise.js';
 
 export interface IInterruptibleTimerController {
-  create(timeout: number): IInterruptibleTimerPromise;
+  get count(): number;
 
-  count(): number;
+  create(timeout: number): IInterruptibleTimerPromise;
 
   stopAll(): void;
 }
 
 export class InterruptibleTimerController implements IInterruptibleTimerController {
   private readonly collection = new Set<IInterruptibleTimerPromise>();
+
+  get count(): number {
+    return this.collection.size;
+  }
 
   create(timeout: number): IInterruptibleTimerPromise {
     const timer = new InterruptibleTimerPromise(timeout);
@@ -23,10 +27,6 @@ export class InterruptibleTimerController implements IInterruptibleTimerControll
       });
 
     return timer;
-  }
-
-  count(): number {
-    return this.collection.size;
   }
 
   stopAll(): void {

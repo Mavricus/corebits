@@ -2,15 +2,19 @@ import { PromiseFulfillError } from '../error/promise-fulfill-error.js';
 import { DelayedPromise, IDelayedPromise } from './delayed-promise.js';
 
 export interface IDelayedPromiseController {
+  get count(): number;
+
   create<T>(): IDelayedPromise<T>;
 
   rejectAll(error: Error): void;
-
-  count(): number;
 }
 
 export class DelayedPromiseController implements IDelayedPromiseController {
   private readonly collection = new Set<IDelayedPromise<unknown>>();
+
+  get count(): number {
+    return this.collection.size;
+  }
 
   create<T>(): IDelayedPromise<T> {
     const promise = new DelayedPromise<T>();
@@ -23,10 +27,6 @@ export class DelayedPromiseController implements IDelayedPromiseController {
     this.collection.add(promise);
 
     return promise;
-  }
-
-  count(): number {
-    return this.collection.size;
   }
 
   rejectAll(error: Error): void {
